@@ -18,10 +18,22 @@
         <div id="app">
             <div class="container">
                 <div class="row">
+                    <!-- Left side -->
+                    <div class="col-sm-3">
+                        <h1>Hotel Information</h1>
+                        <hr />
+                        <label for="">Total discount</label>
+                        <input type="text" class="form-control" v-model="discount" />
+                        <label for="">Service fee</label>
+                        <input type="text" class="form-control" v-model="service_fee" />
+                    </div>
+                    <!-- Right side -->
                     <div class="col-sm-9">
+                        <h1>Room List</h1>
+                        <hr />
                         <div class="row">
                             <div class="col-sm-4 col-room" v-for="myRoom in rooms">
-                                <room :room-data="myRoom" :hotel-discount="discount"> </room>
+                                <room :room-data="myRoom" :hotel-discount="discount" :hotel_fee="service_fee"> </room>
                             </div>
                         </div>
                     </div>

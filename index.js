@@ -2,10 +2,10 @@
 Vue.component("room", {
     template: "#room",
     //傳遞到HTML中的v-bind會變為"room-data"
-    props: ["roomData", "hotelDiscount"],
+    props: ["roomData", "hotelDiscount", "hotel_fee"],
     computed: {
         total_price: function () {
-            return parseInt(this.roomData.price * this.roomData.discount * this.hotelDiscount);
+            return parseInt(this.roomData.price * this.roomData.discount * this.hotelDiscount) + this.hotel_fee * 1.0; // x1.0 to Force to change the hotel_fee to Int
         },
         total_discount: function () {
             return this.roomData.discount * this.hotelDiscount;
@@ -131,6 +131,7 @@ var vm = new Vue({
             },
         ],
         discount: 0.9,
+        service_fee: 300,
     },
 });
 
