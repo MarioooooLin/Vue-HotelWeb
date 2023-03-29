@@ -133,6 +133,23 @@ var vm = new Vue({
         discount: 0.9,
         service_fee: 300,
     },
+    methods: {
+        addRoom: function () {
+            this.rooms.push({
+                name: "新房間",
+                eng: "New room",
+                price: 0,
+                amount: 0,
+                cover: "",
+                discount: 0,
+                equipment: {
+                    wifi: true,
+                    bathtub: true,
+                    breakfast: false,
+                },
+            });
+        },
+    },
 });
 
 // vm.mount("#app");

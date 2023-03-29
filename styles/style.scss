@@ -40,3 +40,14 @@ body {
         }
     }
 }
+.container {
+    .row {
+        .col-sm-3 .col-edit {
+            height: 100vh;
+            overflow-y: scroll;
+        }
+    }
+}
+.room-edit {
+    margin-top: 30px;
+}
